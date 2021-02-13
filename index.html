@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class= "container">
+
+        <div class="content-wrapper">
+            <div class="portfolio-items-wrapper">
+                <div class="portfolio-item-wrapper">
+
+                    <div class="portfolio-image-background" style = "background-image:url(Images/background.jpg)"></div>
+                    
+                    <div class="image-text-wrapper">
+                        <div class="logo-wrapper">
+                            <img src="Images/envelope.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+                
+            <div class="footer-information">
+                <div class="footer-information-text">
+                    <div class="footer-information-text-header">
+                        <h1> Written by Jemmy, 2021</h1>
+                        <h2> Version 1.YoureAdorableRia </h2>
+                    </div>
+                    
+                    <div class="footer-information-text-credits">
+                        <p> Images found at <a href="https://www.unsplash.com/">Unsplash</a> with freely-usable images <a href="https://unsplash.com/license">license </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper')
+
+    portfolioItems.forEach(portfolioItem =>
+    {
+        portfolioItem.addEventListener('mouseover', () => 
+        {
+            portfolioItem.childNodes[3].classList.add('image-brighten');
+            portfolioItem.childNodes[1].classList.add('image-darken');
+        })
+
+        portfolioItem.addEventListener('mouseout', () => 
+        {
+            portfolioItem.childNodes[3].classList.remove('image-brighten');
+            portfolioItem.childNodes[1].classList.remove('image-darken');
+        })
+
+        portfolioItem.addEventListener('click', () => 
+        {
+            portfolioItem.childNodes[3].classList.add('image-replace');
+        })
+    })
+</script>
+</html>
